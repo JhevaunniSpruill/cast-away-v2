@@ -16,3 +16,9 @@
 
 @import 'bootstrap';
 @import 'bootstrap/theme';
+
+.well {
+  h2 {
+    margin-top: 0;
+  }
+}
