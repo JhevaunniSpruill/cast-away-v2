@@ -5,5 +5,7 @@ Rails.application.routes.draw do
     resources :polls
     root 'home#index'
     
+    resources :user
+    
     get 'user/index'
 end
