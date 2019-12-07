@@ -1,17 +1,5 @@
 <h1>Update User Info</h1>
 
-<%= form_for :user, url: user_path(@user), method :patch do |f| %>
+<%= render 'form' %>
 
-    <% if @user.errors.any? %>
-    <div id = "error_explanation">
-        <h2>
-            <%= pluralize(@user.errors.count, "error") %> prohibited this user 
-            from being updated:
-        </h2>
-        <ul>
-            <% @user.errors.full_messages.each do |msg| %>
-                <li><%= msg %></li>
-            <% end %>
-        </ul>
-    </div>
-    <% end %>
+<li><%= link_to 'Back to home page', home_index_url %></li>
