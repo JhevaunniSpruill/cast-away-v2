@@ -9,6 +9,8 @@ class PollsController < ApplicationController
 
   def create
     @poll = Poll.new(poll_params)
+    @poll.user = current_user
+    
     if @poll.save
       flash[:success] = 'Poll was created!'
       redirect_to polls_path
