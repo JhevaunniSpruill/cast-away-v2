@@ -1,5 +1,6 @@
-<h1>Update User Info</h1>
+<h1>Editing User</h1>
 
-<%= render 'form' %>
+<%= render 'form', user: @user %>
 
-<li><%= link_to 'Back to home page', home_index_url %></li>
+<%= link_to 'Show', @user %> |
+<%= link_to 'Back', users_path %>
