@@ -17,4 +17,8 @@ class User < ApplicationRecord
     
     has_many :votes, dependent: :destroy
     has_many :vote_options, through: :votes
+    
+  def voted_for?(poll)
+  vote_options.any? {|v| v.poll == poll }
+  end
 end
