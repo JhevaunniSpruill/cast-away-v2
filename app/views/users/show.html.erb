@@ -1,9 +1,15 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Username:</strong>
+<% content_for(:page_header) do %>
   <%= @user.username %>
-</p>
+<% end %>
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>
+
+<% @user.vote_options.each do |option| %>
+  <div class="panel panel-default">
+    <div class="panel-heading"><%= link_to option.poll.topic, poll_path(option.poll) %></div>
+    <div class="panel-body">
+      <%= option.title %>
+    </div>
+  </div>
+<% end %>

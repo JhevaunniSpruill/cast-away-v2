@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
     resources :polls
-    resources :users
+    resources :users, only: [:show]
     resources :sessions, only: [:new, :create, :destroy]
     resources :votes, only: [:create]
     get 'signup', to: 'users#new', as: 'signup'
